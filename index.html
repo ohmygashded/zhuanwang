@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>专网插件</title>
+    <link rel="stylesheet" href="./css/index.css">
+</head>
+<body>
+    <div class="topForms">
+        <input id="name" type="text" value="" placeholder="请输入姓名或公司名称">
+        <input id="numberplate" type="text" value="" placeholder="请输入车牌号">
+        <select name="plate" id="plate">
+            <option value="江苏科霖信息科技有限公司">江苏科霖信息科技有限公司</option>
+            <option value="唐山济祥运输有限公司">唐山济祥运输有限公司</option>
+            <option value="上海御宇电子信息科技有限公司">上海御宇电子信息科技有限公司</option>
+        </select>
+        <select name="company" id="company">
+            <option value="个人">个人</option>
+            <option value="公司">公司</option>
+        </select>
+        <button onclick="create()" style="margin-right: 10px;">生成</button>
+        <button onclick="exportImg()">导出</button>
+    </div>
+    <div class="networkBox">
+        <div class="leftNetwork">
+            <canvas id="myCanvas" width="794" height="1123"></canvas>
+        </div>
+        <div class="rightNetwork">
+            <canvas id="myCanvas2" width="794" height="1123"></canvas>
+        </div>
+    </div>
+</body>
+<script src="./js/index.js"></script>
+</html>
