@@ -216,8 +216,8 @@
                 <div class="form-group">
                     <label for="plate">平台名称</label>
                     <select id="plate">
-                        <option value="唐山济祥运输有限公司">唐山济祥运输有限公司</option>
                         <option value="江苏科霖信息科技有限公司">江苏科霖信息科技有限公司</option>
+                        <option value="唐山济祥运输有限公司">唐山济祥运输有限公司</option>
                         <option value="上海御宇电子信息科技有限公司">上海御宇电子信息科技有限公司</option>
                     </select>
                 </div>
@@ -265,7 +265,7 @@
         </div>
         
         <footer>
-            <p>© 2023 专网单生成系统 | 技术支持: 400-123-4567</p>
+            <p>© 2025 专网单生成系统 | 技术支持: 156-6193-3077</p>
         </footer>
     </div>
 
@@ -580,13 +580,10 @@
         function drow(name, carNum, loneName, time, type, persionImg, loneImg) {
             const canvas = document.getElementById('myCanvas');
             const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
             
             // 清除整个Canvas内容
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
-            // 设置背景色
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
             
             const titleFontSize = 28;
             const contentFontSize = 20;
@@ -602,21 +599,20 @@
             
             // 绘制正文
             ctx.font = `${contentFontSize}px Arial`;
-            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
             
             // 绘制甲方和乙方
             ctx.fillText(`甲方：${name}`, 50, 70);
             ctx.fillText('（以下简称"甲方"）', 480, 70);
             ctx.beginPath();
-            ctx.moveTo(100, 75);
-            ctx.lineTo(470, 75);
+            ctx.moveTo(100, 90);
+            ctx.lineTo(470, 90);
             ctx.stroke();
             
             ctx.fillText(`乙方：${loneName}`, 50, 105);
             ctx.fillText('（以下简称"乙方"）', 480, 105);
             ctx.beginPath();
-            ctx.moveTo(100, 110);
-            ctx.lineTo(470, 110);
+            ctx.moveTo(100, 125);
+            ctx.lineTo(470, 125);
             ctx.stroke();
             
             // 绘制合作范围及实施约定
@@ -626,8 +622,8 @@
             ctx.fillText(`甲方授权乙方将其车辆 ${carNum}`, 70, 265);
             ctx.fillText('，转入乙方平台。', 450, 265);
             ctx.beginPath();
-            ctx.moveTo(275, 270);
-            ctx.lineTo(440, 270);
+            ctx.moveTo(275, 280);
+            ctx.lineTo(440, 280);
             ctx.stroke();
             
             // 绘制合作内容及费用收取
@@ -651,16 +647,16 @@
             // 绘制甲方和乙方签字及日期
             ctx.fillText('甲方:', 50, 800);
             ctx.beginPath();
-            ctx.moveTo(50, 840);
-            ctx.lineTo(390, 840);
+            ctx.moveTo(50, 855);
+            ctx.lineTo(390, 855);
             ctx.stroke();
             ctx.fillText(`${name}`, 80, 830);
             ctx.fillText('（签字）', 400, 840);
             
             ctx.fillText('乙方：', 50, 900);
             ctx.beginPath();
-            ctx.moveTo(50, 930);
-            ctx.lineTo(390, 930);
+            ctx.moveTo(50, 940);
+            ctx.lineTo(390, 940);
             ctx.stroke();
             ctx.fillText('（服务商盖章）', 400, 930);
             ctx.fillText(`签定日期 ${time}`, 50, 1000);
@@ -687,18 +683,14 @@
         function drow2(name, carNum, loneName, time, type, persionImg, loneImg) {
             const canvas = document.getElementById('myCanvas2');
             const ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
             
             // 清除整个Canvas内容
             ctx.clearRect(0, 0, canvas.width, canvas.height);
             
-            // 设置背景色
-            ctx.fillStyle = 'white';
-            ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
             const titleFontSize = 28;
             const contentFontSize = 20;
             const canvasWidth = canvas.width;
-            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
             
             if (type == '个人') {
                 const titleText = '车主授权书';
@@ -719,13 +711,13 @@
                 ctx.fillText(loneName, 330, 170);
                 
                 ctx.beginPath();
-                ctx.moveTo(95, 175);
-                ctx.lineTo(250, 175);
+                ctx.moveTo(95, 190);
+                ctx.lineTo(250, 190);
                 ctx.stroke();
                 
                 ctx.beginPath();
-                ctx.moveTo(320, 175);
-                ctx.lineTo(645, 175);
+                ctx.moveTo(320, 190);
+                ctx.lineTo(645, 190);
                 ctx.stroke();
                 
                 ctx.fillText(`作为全国货运`, 650, 170);
@@ -734,8 +726,8 @@
                 ctx.fillText(`平台服务商，为我名下车辆`, 10, 220);
                 
                 ctx.beginPath();
-                ctx.moveTo(250, 225);
-                ctx.lineTo(415, 225);
+                ctx.moveTo(250, 240);
+                ctx.lineTo(415, 240);
                 ctx.stroke();
                 ctx.fillText(carNum, 255, 220);
                 ctx.fillText(`提供车载卫星定位终端安装或对接、以及`, 420, 220);
@@ -754,8 +746,8 @@
                 ctx.fillText(`平台介入，协助尽快将车辆转入`, 10, 445);
                 ctx.fillText(loneName, 305, 445);
                 ctx.beginPath();
-                ctx.moveTo(295, 450);
-                ctx.lineTo(620, 450);
+                ctx.moveTo(295, 465);
+                ctx.lineTo(620, 465);
                 ctx.stroke();
                 ctx.fillText(`平台。`, 625, 445);
                 
@@ -763,20 +755,20 @@
                 ctx.fillText(`车主签字：`, 50, 700);
                 ctx.fillText(`${name}`, 200, 700);
                 ctx.beginPath();
-                ctx.moveTo(150, 705);
-                ctx.lineTo(400, 705);
+                ctx.moveTo(150, 720);
+                ctx.lineTo(400, 720);
                 ctx.stroke();
                 
                 // 服务商盖章以及电话
                 ctx.fillText(`服务商（盖章）：`, 50, 900);
                 ctx.fillText(`服务商电话：`, 50, 940);
                 ctx.beginPath();
-                ctx.moveTo(220, 905);
-                ctx.lineTo(400, 905);
+                ctx.moveTo(220, 920);
+                ctx.lineTo(400, 920);
                 ctx.stroke();
                 ctx.beginPath();
-                ctx.moveTo(170, 945);
-                ctx.lineTo(400, 945);
+                ctx.moveTo(170, 960);
+                ctx.lineTo(400, 960);
                 ctx.stroke();
                 
                 ctx.fillText(`授权时间： ${time}`, 50, 1050);
@@ -807,15 +799,15 @@
                 ctx.fillText(`本企业`, 50, 170);
                 ctx.fillText(`${name}`, 130, 170);
                 ctx.beginPath();
-                ctx.moveTo(120, 175);
-                ctx.lineTo(760, 175);
+                ctx.moveTo(120, 190);
+                ctx.lineTo(760, 190);
                 ctx.stroke();
                 
                 ctx.fillText(`现选择`, 50, 220);
                 ctx.fillText(loneName, 130, 220);
                 ctx.beginPath();
-                ctx.moveTo(120, 225);
-                ctx.lineTo(500, 225);
+                ctx.moveTo(120, 240);
+                ctx.lineTo(500, 240);
                 ctx.stroke();
                 
                 ctx.fillText(`作为全国货运平台服务商，为`, 510, 220);
@@ -827,8 +819,8 @@
                 ctx.fillText(loneName, 80, 470);
                 
                 ctx.beginPath();
-                ctx.moveTo(75, 475);
-                ctx.lineTo(470, 475);
+                ctx.moveTo(75, 490);
+                ctx.lineTo(470, 490);
                 ctx.stroke();
                 
                 ctx.fillText(`服务商申请全国平台介入，协助尽`, 475, 470);
