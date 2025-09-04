@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +11,7 @@
             margin: 0;
             padding: 0;
         }
+
         body {
             font-family: 'Microsoft YaHei', sans-serif;
             line-height: 1.6;
@@ -18,6 +20,7 @@
             padding: 20px;
             min-height: 100vh;
         }
+
         .container {
             max-width: 1200px;
             margin: 0 auto;
@@ -25,6 +28,7 @@
             flex-direction: column;
             gap: 25px;
         }
+
         header {
             text-align: center;
             padding: 20px;
@@ -33,35 +37,42 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
         }
+
         h1 {
             font-size: 2.2rem;
             margin-bottom: 10px;
         }
+
         .subtitle {
             font-size: 1.1rem;
             opacity: 0.9;
         }
+
         .content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 25px;
         }
+
         @media (max-width: 900px) {
             .content {
                 grid-template-columns: 1fr;
             }
         }
+
         .form-section {
             background: white;
             padding: 25px;
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
         }
+
         .canvas-section {
             display: flex;
             flex-direction: column;
             gap: 25px;
         }
+
         .canvas-container {
             background: white;
             padding: 20px;
@@ -69,22 +80,27 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
             text-align: center;
         }
+
         h2 {
             color: #2c3e50;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #eee;
         }
+
         .form-group {
             margin-bottom: 20px;
         }
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: bold;
             color: #2c3e50;
         }
-        input, select {
+
+        input,
+        select {
             width: 100%;
             padding: 12px 15px;
             border: 1px solid #ddd;
@@ -92,16 +108,20 @@
             font-size: 16px;
             transition: border-color 0.3s;
         }
-        input:focus, select:focus {
+
+        input:focus,
+        select:focus {
             outline: none;
             border-color: #3498db;
             box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.2);
         }
+
         .btn-group {
             display: flex;
             gap: 15px;
             margin-top: 25px;
         }
+
         button {
             padding: 14px 20px;
             border: none;
@@ -115,26 +135,31 @@
             justify-content: center;
             gap: 8px;
         }
+
         #generateBtn {
             background: linear-gradient(to right, #3498db, #2980b9);
             color: white;
             flex: 2;
         }
+
         #generateBtn:hover {
             background: linear-gradient(to right, #2980b9, #2573a7);
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3);
         }
+
         #exportBtn {
             background: linear-gradient(to right, #2ecc71, #27ae60);
             color: white;
             flex: 1;
         }
+
         #exportBtn:hover {
             background: linear-gradient(to right, #27ae60, #219653);
             transform: translateY(-2px);
             box-shadow: 0 4px 10px rgba(46, 204, 113, 0.3);
         }
+
         canvas {
             border: 1px solid #e0e0e0;
             margin: 10px auto;
@@ -142,36 +167,43 @@
             box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             max-width: 100%;
         }
+
         .status-container {
             margin-top: 20px;
             padding: 15px;
             border-radius: 8px;
             background: #f8f9fa;
         }
+
         .loading {
             display: none;
             text-align: center;
             color: #3498db;
             margin: 15px 0;
         }
+
         .status {
             text-align: center;
             padding: 10px;
             border-radius: 6px;
             font-weight: bold;
         }
+
         .success {
             background: #d4edda;
             color: #155724;
         }
+
         .error {
             background: #f8d7da;
             color: #721c24;
         }
+
         .info {
             background: #d1ecf1;
             color: #0c5460;
         }
+
         .progress-bar {
             height: 6px;
             background: #e0e0e0;
@@ -179,12 +211,14 @@
             overflow: hidden;
             margin: 10px 0;
         }
+
         .progress {
             height: 100%;
             background: linear-gradient(to right, #3498db, #2ecc71);
             width: 0%;
             transition: width 0.4s;
         }
+
         footer {
             text-align: center;
             margin-top: 30px;
@@ -193,13 +227,14 @@
         }
     </style>
 </head>
+
 <body>
     <div class="container">
         <header>
             <h1>专网单生成系统</h1>
             <p class="subtitle">高效生成专网合同与授权书</p>
         </header>
-        
+
         <div class="content">
             <div class="form-section">
                 <h2>填写信息</h2>
@@ -207,12 +242,12 @@
                     <label for="name">姓名/公司名称</label>
                     <input type="text" id="name" placeholder="请输入姓名或公司名称">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="numberplate">车牌号</label>
                     <input type="text" id="numberplate" placeholder="请输入车牌号">
                 </div>
-                
+
                 <div class="form-group">
                     <label for="plate">平台名称</label>
                     <select id="plate">
@@ -221,7 +256,7 @@
                         <option value="上海御宇电子信息科技有限公司">上海御宇电子信息科技有限公司</option>
                     </select>
                 </div>
-                
+
                 <div class="form-group">
                     <label for="company">类型</label>
                     <select id="company">
@@ -229,7 +264,7 @@
                         <option value="公司">公司</option>
                     </select>
                 </div>
-                
+
                 <div class="btn-group">
                     <button id="generateBtn">
                         <span>生成专网单</span>
@@ -238,52 +273,52 @@
                         <span>导出图片</span>
                     </button>
                 </div>
-                
+
                 <div id="loading" class="loading">
                     <p>正在生成中，请稍候...</p>
                     <div class="progress-bar">
                         <div id="progress" class="progress"></div>
                     </div>
                 </div>
-                
+
                 <div class="status-container">
                     <div id="status" class="status info">请填写信息并生成专网单</div>
                 </div>
             </div>
-            
+
             <div class="canvas-section">
                 <div class="canvas-container">
                     <h2>专网合同</h2>
                     <canvas id="myCanvas" width="800" height="1100"></canvas>
                 </div>
-                
+
                 <div class="canvas-container">
                     <h2>授权书</h2>
                     <canvas id="myCanvas2" width="800" height="1100"></canvas>
                 </div>
             </div>
         </div>
-        
+
         <footer>
-            <p>© 2025 专网单生成系统 | 技术支持: 156-6193-3077</p>
+            <p>© 2023 专网单生成系统 | 技术支持: 156-6193-3077</p>
         </footer>
     </div>
 
     <script>
         // 图像缓存对象
         const imageCache = {};
-        
+
         // 需要预加载的关键图像资源
         const criticalImages = [
             './img/唐山.png', './img/科霖.png', './img/上海.png'
         ];
-        
+
         // 预加载关键图像
         function preloadCriticalImages() {
             const statusEl = document.getElementById('status');
             statusEl.textContent = "正在加载关键图像资源...";
             statusEl.className = "status info";
-            
+
             criticalImages.forEach(src => {
                 const img = new Image();
                 img.onload = () => {
@@ -295,28 +330,28 @@
                 img.src = src;
             });
         }
-        
+
         // 页面加载完成后预加载关键图像
         window.addEventListener('DOMContentLoaded', () => {
             preloadCriticalImages();
-            
+
             // 设置初始Canvas背景
             const canvas = document.getElementById('myCanvas');
             const ctx = canvas.getContext('2d');
             ctx.fillStyle = 'white';
             ctx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             const canvas2 = document.getElementById('myCanvas2');
             const ctx2 = canvas2.getContext('2d');
             ctx2.fillStyle = 'white';
             ctx2.fillRect(0, 0, canvas2.width, canvas2.height);
         });
-        
+
         // 获取随机数
         function getRandomNum(min, max) {
             return Math.floor(Math.random() * (max - min + 1)) + min;
         }
-        
+
         // 获取当前日期
         function getDate() {
             let date = new Date();
@@ -325,18 +360,18 @@
             let day = date.getDate();
             return year + ' 年 ' + month + ' 月 ' + day + ' 日 ';
         }
-        
+
         // 生成专网单
         function create() {
             const loadingEl = document.getElementById('loading');
             const progressEl = document.getElementById('progress');
             const statusEl = document.getElementById('status');
-            
+
             loadingEl.style.display = 'block';
             progressEl.style.width = '30%';
             statusEl.textContent = "正在生成专网单...";
             statusEl.className = "status info";
-            
+
             let name = document.getElementById('name').value;
             let numberplate = document.getElementById('numberplate').value;
             let plate = document.getElementById('plate').value;
@@ -344,21 +379,21 @@
             let time = getDate();
             let persionSrc = '';
             let loneSrc = '';
-            
+
             if (!name || !numberplate) {
                 statusEl.textContent = "请填写姓名和车牌号！";
                 statusEl.className = "status error";
                 loadingEl.style.display = 'none';
                 return;
             }
-            
+
             // 使用setTimeout让UI有机会更新加载状态
             setTimeout(() => {
                 try {
                     if (type == '个人') {
                         let sum = getRandomNum(1, 9);
                         persionSrc = `./img/指纹${sum}.png`;
-                        
+
                         switch (plate) {
                             case '唐山济祥运输有限公司':
                                 loneSrc = './img/唐山.png';
@@ -427,7 +462,7 @@
                                 alert('暂无该公司信息');
                                 break;
                         }
-                        
+
                         switch (plate) {
                             case '唐山济祥运输有限公司':
                                 loneSrc = './img/唐山.png';
@@ -440,19 +475,19 @@
                                 break;
                         }
                     }
-                    
+
                     progressEl.style.width = '60%';
-                    
+
                     // 按需加载图像
                     loadImages([persionSrc, loneSrc], () => {
                         progressEl.style.width = '90%';
-                        
+
                         // 绘制Canvas
                         drow(name, numberplate, plate, time, type, imageCache[persionSrc], imageCache[loneSrc]);
                         drow2(name, numberplate, plate, time, type, imageCache[persionSrc], imageCache[loneSrc]);
-                        
+
                         progressEl.style.width = '100%';
-                        
+
                         setTimeout(() => {
                             loadingEl.style.display = 'none';
                             statusEl.textContent = "专网单生成成功！";
@@ -467,40 +502,40 @@
                 }
             }, 50);
         }
-        
+
         // 加载图像
         function loadImages(sources, callback) {
             const images = {};
             let loadedCount = 0;
             let toLoadCount = 0;
-            
+
             // 统计需要加载的图像数量
             for (const src of sources) {
                 if (src && !imageCache[src]) {
                     toLoadCount++;
                 }
             }
-            
+
             if (toLoadCount === 0) {
                 setTimeout(callback, 10);
                 return;
             }
-            
+
             for (const src of sources) {
                 if (!src) continue;
-                
+
                 if (imageCache[src]) {
                     // 图像已在缓存中
                     images[src] = imageCache[src];
                     continue;
                 }
-                
+
                 const img = new Image();
                 img.onload = () => {
                     imageCache[src] = img;
                     images[src] = img;
                     loadedCount++;
-                    
+
                     if (loadedCount >= toLoadCount) {
                         callback();
                     }
@@ -508,7 +543,7 @@
                 img.onerror = () => {
                     console.error(`Failed to load image: ${src}`);
                     loadedCount++;
-                    
+
                     if (loadedCount >= toLoadCount) {
                         callback();
                     }
@@ -516,48 +551,48 @@
                 img.src = src;
             }
         }
-        
+
         // 导出图片
         function exportImg() {
             const canvas = document.getElementById('myCanvas');
             const canvas2 = document.getElementById('myCanvas2');
-            
+
             if (canvas.width === 0 || canvas2.width === 0) {
                 document.getElementById('status').textContent = "请先生成专网单！";
                 document.getElementById('status').className = "status error";
                 return;
             }
-            
+
             // 创建一个新Canvas用于绘制背景颜色
             const exportCanvas = document.createElement('canvas');
             const exportCanvas2 = document.createElement('canvas');
-            
+
             exportCanvas.width = canvas.width;
             exportCanvas.height = canvas.height;
-            
+
             exportCanvas2.width = canvas2.width;
             exportCanvas2.height = canvas2.height;
-            
+
             const exportCtx = exportCanvas.getContext('2d');
             const exportCtx2 = exportCanvas2.getContext('2d');
-            
+
             // 设置背景颜色
             exportCtx.fillStyle = 'white';
             exportCtx.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             exportCtx2.fillStyle = 'white';
             exportCtx2.fillRect(0, 0, canvas.width, canvas.height);
-            
+
             // 将原始Canvas内容绘制到新Canvas上
             exportCtx.drawImage(canvas, 0, 0);
             exportCtx2.drawImage(canvas2, 0, 0);
-            
+
             // 将新Canvas转换为JPEG格式的Base64数据
             const imageDataURL = exportCanvas.toDataURL('image/jpeg');
             const imageDataURL2 = exportCanvas2.toDataURL('image/jpeg');
-            
+
             let carNum = document.getElementById('numberplate').value;
-            
+
             // 创建一个a标签，模拟点击下载
             const a = document.createElement('a');
             a.href = imageDataURL;
@@ -565,67 +600,71 @@
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            
+
             a.href = imageDataURL2;
             a.download = `${carNum}(2).jpg`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
-            
+
             document.getElementById('status').textContent = "图片已导出！";
             document.getElementById('status').className = "status success";
         }
-        
+
         // 绘制个人或公司canvas 01
         function drow(name, carNum, loneName, time, type, persionImg, loneImg) {
             const canvas = document.getElementById('myCanvas');
             const ctx = canvas.getContext('2d');
             ctx.fillStyle = 'black'; // 确保文字颜色是黑色
-            
+
             // 清除整个Canvas内容
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
+            // 设置背景色
+            // ctx.fillStyle = 'white';
+            // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             const titleFontSize = 28;
             const contentFontSize = 20;
             const canvasWidth = canvas.width;
             const titleText = '北斗定位监控服务专网合同';
-            
             // 绘制标题
-            ctx.font = `bold ${titleFontSize}px Arial`;
-            ctx.textBaseline = 'top';
+            ctx.font = `${titleFontSize}px Arial`;
+            // 获取标题文本的宽度
             const titleWidth = ctx.measureText(titleText).width;
+            // 计算标题的居中位置
             const titleX = (canvasWidth - titleWidth) / 2;
+
             ctx.fillText(titleText, titleX, 30);
-            
+
             // 绘制正文
             ctx.font = `${contentFontSize}px Arial`;
-            
+
             // 绘制甲方和乙方
             ctx.fillText(`甲方：${name}`, 50, 70);
-            ctx.fillText('（以下简称"甲方"）', 480, 70);
+            ctx.fillText('（以下简称“甲方”）', 480, 70)
             ctx.beginPath();
-            ctx.moveTo(100, 90);
-            ctx.lineTo(470, 90);
+            ctx.moveTo(100, 75);
+            ctx.lineTo(470, 75);
             ctx.stroke();
-            
             ctx.fillText(`乙方：${loneName}`, 50, 105);
-            ctx.fillText('（以下简称"乙方"）', 480, 105);
+            ctx.fillText('（以下简称“乙方”）', 480, 105)
             ctx.beginPath();
-            ctx.moveTo(100, 125);
-            ctx.lineTo(470, 125);
+            ctx.moveTo(100, 110);
+            ctx.lineTo(470, 110);
             ctx.stroke();
-            
+
             // 绘制合作范围及实施约定
             ctx.fillText('甲乙双方在友好协商的基础上，就甲方将其车辆接入乙方平台一事，达成一致共同', 50, 170);
-            ctx.fillText('遵守：', 10, 200);
+            ctx.fillText('遵守：', 10, 200)
             ctx.fillText('一、合作范围及实施约定', 50, 230);
             ctx.fillText(`甲方授权乙方将其车辆 ${carNum}`, 70, 265);
             ctx.fillText('，转入乙方平台。', 450, 265);
             ctx.beginPath();
-            ctx.moveTo(275, 285);
-            ctx.lineTo(440, 285);
+            ctx.moveTo(275, 270);
+            ctx.lineTo(440, 270);
             ctx.stroke();
-            
+
             // 绘制合作内容及费用收取
             ctx.fillText('二、合作内容及费用收取', 50, 300);
             ctx.fillText('1.免收期：转网车辆享受转网到乙方平台后 壹 个月的服务费免收期优惠。', 70, 340);
@@ -633,34 +672,34 @@
             ctx.fillText('出具符合国家法律、法规规定的同等金额的收费凭证。', 86, 410);
             ctx.fillText('3.终端维护：转网后的车辆，从入网之日起由乙方提供相应平台服务及终端的全国', 70, 445);
             ctx.fillText('售后联保服务，甲方予以必要协助。售后电话：19997777633。', 86, 480);
-            
+
             // 绘制合作期限
             ctx.fillText('三、合作期限', 50, 510);
             ctx.fillText('本合同有效期为 壹 年，自合同签定之日起生效。', 70, 540);
-            
+
             // 绘制其他
             ctx.fillText('四、其他', 50, 570);
             ctx.fillText('1.未经双方书面确认，任何一方不得变更或修改本协议，国家法律、法规另有规定', 70, 600);
-            ctx.fillText('的除外。', 86, 630);
+            ctx.fillText('的除外。', 86, 630)
             ctx.fillText('2.不可抗力的除外。', 70, 660);
-            
+
             // 绘制甲方和乙方签字及日期
             ctx.fillText('甲方:', 50, 800);
             ctx.beginPath();
-            ctx.moveTo(50, 855);
-            ctx.lineTo(390, 855);
+            ctx.moveTo(50, 840);
+            ctx.lineTo(390, 840);
             ctx.stroke();
             ctx.fillText(`${name}`, 80, 830);
             ctx.fillText('（签字）', 400, 840);
-            
+
             ctx.fillText('乙方：', 50, 900);
             ctx.beginPath();
-            ctx.moveTo(50, 945);
-            ctx.lineTo(390, 945);
+            ctx.moveTo(50, 930);
+            ctx.lineTo(390, 930);
             ctx.stroke();
             ctx.fillText('（服务商盖章）', 400, 930);
             ctx.fillText(`签定日期 ${time}`, 50, 1000);
-            
+
             // 绘制图像
             if (persionImg && loneImg) {
                 if (type == '个人') {
@@ -672,76 +711,80 @@
                     const height = 150;
                     ctx.drawImage(persionImg, 200, 700, width, height);
                 }
-                
+
                 const desiredWidth = 150;
                 const desiredHeight = 150;
                 ctx.drawImage(loneImg, 100, 850, desiredWidth, desiredHeight);
             }
         }
-        
+
         // 车主授权书
         function drow2(name, carNum, loneName, time, type, persionImg, loneImg) {
             const canvas = document.getElementById('myCanvas2');
             const ctx = canvas.getContext('2d');
-            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
-            
+
             // 清除整个Canvas内容
             ctx.clearRect(0, 0, canvas.width, canvas.height);
-            
+
+            // 设置背景色
+            // ctx.fillStyle = 'white';
+            // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
             const titleFontSize = 28;
             const contentFontSize = 20;
             const canvasWidth = canvas.width;
-            
+            ctx.fillStyle = 'black'; // 确保文字颜色是黑色
+
             if (type == '个人') {
                 const titleText = '车主授权书';
-                
+
                 // 绘制标题
-                ctx.font = `bold ${titleFontSize}px Arial`;
+                ctx.font = `${titleFontSize}px Arial`;
                 ctx.textBaseline = 'top';
                 const titleWidth = ctx.measureText(titleText).width;
                 const titleX = (canvasWidth - titleWidth) / 2;
                 ctx.fillText(titleText, titleX, 30);
-                
+
                 // 绘制正文
                 ctx.font = `${contentFontSize}px Arial`;
-                
+
                 ctx.fillText(`本人`, 50, 170);
                 ctx.fillText(`${name}`, 105, 170);
-                ctx.fillText(`现选择`, 260, 170);
+                ctx.fillText(`现选择`, 260, 170)
                 ctx.fillText(loneName, 330, 170);
-                
+
                 ctx.beginPath();
                 ctx.moveTo(95, 190);
                 ctx.lineTo(250, 190);
                 ctx.stroke();
-                
+
                 ctx.beginPath();
                 ctx.moveTo(320, 190);
                 ctx.lineTo(645, 190);
                 ctx.stroke();
-                
+
                 ctx.fillText(`作为全国货运`, 650, 170);
-                
+
                 // 第二行
                 ctx.fillText(`平台服务商，为我名下车辆`, 10, 220);
-                
+
                 ctx.beginPath();
                 ctx.moveTo(250, 240);
                 ctx.lineTo(415, 240);
                 ctx.stroke();
-                ctx.fillText(carNum, 255, 220);
-                ctx.fillText(`提供车载卫星定位终端安装或对接、以及`, 420, 220);
+                ctx.fillText(carNum, 255, 220)
+                ctx.fillText(`提供车载卫星定位终端安装或对接、以及`, 420, 220)
                 ctx.fillText(`后续其他服务。`, 10, 270);
-                
+
                 // 第三行
                 ctx.fillText(`1.本人名下车辆现已与原服务商合同终止并且结清了相关费用。`, 50, 315);
-                
+
                 // 第四行
                 ctx.fillText(`2.本人名下车辆现已与原服务商无合同纠纷及经济纠纷。`, 50, 360);
-                
+
                 // 第五行
                 ctx.fillText(`由于与原来服务商沟通专网比较困难，特授权现服务商申请全国道路货运车辆公共`, 50, 400);
-                
+
                 // 第六行
                 ctx.fillText(`平台介入，协助尽快将车辆转入`, 10, 445);
                 ctx.fillText(loneName, 305, 445);
@@ -750,7 +793,7 @@
                 ctx.lineTo(620, 465);
                 ctx.stroke();
                 ctx.fillText(`平台。`, 625, 445);
-                
+
                 // 车主签字
                 ctx.fillText(`车主签字：`, 50, 700);
                 ctx.fillText(`${name}`, 200, 700);
@@ -758,7 +801,7 @@
                 ctx.moveTo(150, 720);
                 ctx.lineTo(400, 720);
                 ctx.stroke();
-                
+
                 // 服务商盖章以及电话
                 ctx.fillText(`服务商（盖章）：`, 50, 900);
                 ctx.fillText(`服务商电话：`, 50, 940);
@@ -770,46 +813,46 @@
                 ctx.moveTo(170, 960);
                 ctx.lineTo(400, 960);
                 ctx.stroke();
-                
+
                 ctx.fillText(`授权时间： ${time}`, 50, 1050);
-                
+
                 // 绘制图像
                 if (persionImg && loneImg) {
                     const width = 50;
                     const height = 60;
                     ctx.drawImage(persionImg, 180, 650, width, height);
-                    
+
                     const desiredWidth = 150;
                     const desiredHeight = 150;
                     ctx.drawImage(loneImg, 100, 850, desiredWidth, desiredHeight);
                 }
             } else if (type == '公司') {
                 const titleText = '企业授权书';
-                
+
                 // 绘制标题
-                ctx.font = `bold ${titleFontSize}px Arial`;
+                ctx.font = `${titleFontSize}px Arial`;
                 ctx.textBaseline = 'top';
                 const titleWidth = ctx.measureText(titleText).width;
                 const titleX = (canvasWidth - titleWidth) / 2;
                 ctx.fillText(titleText, titleX, 30);
-                
+
                 // 绘制正文
                 ctx.font = `${contentFontSize}px Arial`;
-                
+
                 ctx.fillText(`本企业`, 50, 170);
                 ctx.fillText(`${name}`, 130, 170);
                 ctx.beginPath();
                 ctx.moveTo(120, 190);
                 ctx.lineTo(760, 190);
                 ctx.stroke();
-                
+
                 ctx.fillText(`现选择`, 50, 220);
                 ctx.fillText(loneName, 130, 220);
                 ctx.beginPath();
                 ctx.moveTo(120, 240);
                 ctx.lineTo(500, 240);
                 ctx.stroke();
-                
+
                 ctx.fillText(`作为全国货运平台服务商，为`, 510, 220);
                 ctx.fillText(`我公司车辆提供北斗部标定位终端安装及后续其他服务。`, 10, 270);
                 ctx.fillText(`1.本公司车辆现已与原服务商合同中止并且结清了相关费用。`, 50, 320);
@@ -817,12 +860,12 @@
                 ctx.fillText(`由于其他服务商未经我方同意强行录入我公司车辆，导致我方车辆无法正常录入，`, 50, 420);
                 ctx.fillText(`特授权`, 10, 470);
                 ctx.fillText(loneName, 80, 470);
-                
+
                 ctx.beginPath();
                 ctx.moveTo(75, 490);
                 ctx.lineTo(470, 490);
                 ctx.stroke();
-                
+
                 ctx.fillText(`服务商申请全国平台介入，协助尽`, 475, 470);
                 ctx.fillText(`快将车辆在其他平台删除。`, 10, 520);
                 ctx.fillText(`企业章：`, 50, 670);
@@ -831,23 +874,24 @@
                 ctx.fillText('服务商盖章：________________________', 50, 920);
                 ctx.fillText('服务商签字：________________________', 50, 970);
                 ctx.fillText(`受理时间：${time}`, 50, 1070);
-                
+
                 // 绘制图像
                 if (persionImg && loneImg) {
                     const width = 150;
                     const height = 150;
                     ctx.drawImage(persionImg, 130, 600, width, height);
-                    
+
                     const desiredWidth = 150;
                     const desiredHeight = 150;
                     ctx.drawImage(loneImg, 100, 850, desiredWidth, desiredHeight);
                 }
             }
         }
-        
+
         // 添加事件监听
         document.getElementById('generateBtn').addEventListener('click', create);
         document.getElementById('exportBtn').addEventListener('click', exportImg);
     </script>
 </body>
+
 </html>
